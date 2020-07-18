@@ -15,7 +15,10 @@
       </div>
     </div>
 
-    <div class="grid grid-cols-6 gap-1">
+    <div
+      class="grid gap-1"
+      style="grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));"
+    >
       <div
         v-for="(icon, index) in searchIcons"
         :key="index"
