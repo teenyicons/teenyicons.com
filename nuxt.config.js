@@ -2,7 +2,7 @@ export default {
   mode: 'universal',
   target: 'static',
   head: {
-    title: process.env.npm_package_name || '',
+    title: 'Teenycons',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -18,21 +18,13 @@ export default {
   modules: ['nuxt-webfontloader'],
   webfontloader: {
     google: {
-      families: ['Inter:400'], // Loads Lato font with weights 400 and 700
+      families: ['Inter:400'],
     },
   },
-
   buildModules: [
     '@nuxtjs/eslint-module',
     '@nuxtjs/stylelint-module',
     '@nuxtjs/tailwindcss',
-    '@aceforth/nuxt-optimized-images',
   ],
-  optimizedImages: {
-    optimizeImages: true,
-    svgo: {
-      plugins: [{ removeComments: true, removeUselessStrokeAndFill: true }],
-    },
-  },
   build: {},
 };
