@@ -1,16 +1,18 @@
 <template>
   <div class="space-y-5">
-    <div
-      class="px-3 p-2 w-full inline-flex items-center justify-between border border-black space-x-3"
-    >
-      <img src="@/assets/icons/search.svg" alt="" />
-      <input
-        v-model="searchTerm"
-        class="bg-transparent w-full placeholder-black placeholder-opacity-50 outline-none"
-        type="text"
-        :placeholder="`Search ${$options.icons.length} icons...`"
-        spellcheck="false"
-      />
+    <div class="sticky z-10 bg-white pt-2" style="top: 0;">
+      <div
+        class="bg-white px-3 p-2 w-full inline-flex items-center justify-between border border-black space-x-3"
+      >
+        <img src="@/assets/icons/search.svg" alt="" />
+        <input
+          v-model="searchTerm"
+          class="w-full placeholder-black placeholder-opacity-50 outline-none"
+          type="text"
+          :placeholder="`Search ${$options.icons.length} icons...`"
+          spellcheck="false"
+        />
+      </div>
     </div>
 
     <div class="grid grid-cols-6 gap-1">
