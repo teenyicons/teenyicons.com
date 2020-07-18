@@ -2,6 +2,9 @@ export default {
   mode: 'universal',
   target: 'static',
   head: {
+    htmlAttrs: {
+      lang: 'en',
+    },
     title: 'Teenycons',
     meta: [
       { charset: 'utf-8' },
