@@ -6,9 +6,10 @@
       >
         <img src="@/assets/icons/search.svg" alt="" />
         <input
+          aria-label="Search icons"
           v-model="searchTerm"
           class="w-full placeholder-black placeholder-opacity-50 outline-none"
-          type="text"
+          type="search"
           :placeholder="`Search ${$options.icons.length} icons...`"
           spellcheck="false"
         />
