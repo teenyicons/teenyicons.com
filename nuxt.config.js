@@ -18,16 +18,17 @@ export default {
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
   components: true,
-  modules: ['nuxt-webfontloader'],
-  webfontloader: {
-    google: {
-      families: ['Inter:400'],
-    },
-  },
+  plugins: ['@/plugins/icons.js'],
+  modules: ['nuxt-webfontloader', 'nuxt-svg-loader'],
   buildModules: [
     '@nuxtjs/eslint-module',
     '@nuxtjs/stylelint-module',
     '@nuxtjs/tailwindcss',
   ],
+  webfontloader: {
+    google: {
+      families: ['Inter:400'],
+    },
+  },
   build: {},
 };
