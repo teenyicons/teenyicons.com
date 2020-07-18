@@ -31,14 +31,31 @@
         </div>
         <nav>
           <ul class="flex justify-center items-center space-x-5">
-            <li class="underline cursor-pointer">Outline</li>
-            <li class="cursor-pointer">Filled</li>
+            <li class="cursor-pointer">
+              <button
+                class="focus:outline-none"
+                :class="variant === 'outline' ? 'underline' : ''"
+                @click="variant = 'outline'"
+              >
+                Outline
+              </button>
+            </li>
+            <li class="cursor-pointer">
+              <button
+                class="focus:outline-none"
+                :class="variant === 'filled' ? 'underline' : ''"
+                @click="variant = 'filled'"
+              >
+                Filled
+              </button>
+            </li>
           </ul>
         </nav>
       </div>
     </div>
 
     <div
+      v-if="variant === 'outline'"
       class="grid gap-1"
       style="grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));"
     >
@@ -46,6 +63,7 @@
         <app-icon :icon="icon" :size="IconsSize"></app-icon>
       </div>
     </div>
+    <div v-if="variant === 'filled'" class="text-center">Coming soon.</div>
   </div>
 </template>
 
@@ -56,7 +74,7 @@ import AppIcon from '@/components/AppIcon';
 export default {
   components: { IconSearch, AppIcon },
   data() {
-    return { searchTerm: '', IconsSize: 15 };
+    return { searchTerm: '', IconsSize: 15, variant: 'outline' };
   },
   computed: {
     searchIcons() {
