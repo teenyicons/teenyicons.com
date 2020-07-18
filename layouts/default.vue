@@ -16,7 +16,9 @@
       <p>Made by person. Viewer by person.</p>
     </header>
     <Nuxt class="flex-grow" />
-    <footer>this is a footer</footer>
+    <footer class="py-6 text-center text-xs">
+      Released under SOME License
+    </footer>
   </div>
 </template>
 
