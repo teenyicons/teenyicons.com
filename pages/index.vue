@@ -29,12 +29,13 @@
           class="absolute px-1 m-1 top-0 right-0 text-xs bg-black text-white"
           >new</span
         >
-        <img
-          class="w-4"
-          :title="icon.description"
-          :src="require(`@/assets/icons/${icon.name}.svg`)"
-          :alt="icon.description"
-        />
+        <div class="w-4 h-4">
+          <img
+            :title="icon.description"
+            :src="require(`@/assets/icons/${icon.name}.svg`)"
+            :alt="icon.description"
+          />
+        </div>
         <span class="truncate text-xs">{{ icon.name }}</span>
       </div>
     </div>
