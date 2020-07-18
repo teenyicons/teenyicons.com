@@ -15,10 +15,10 @@
         />
       </div>
       <div
-        class="text-xs px-4 flex justify-between items-center border-b border-r border-l border-black"
+        class="text-xs px-4 py-2 flex justify-between items-center border-b border-r border-l border-black"
       >
-        <label for="range"
-          >Size:
+        <div class="flex space-x-2">
+          <label for="range">Size: </label>
           <input
             v-model.number="IconsSize"
             class="appearance-none"
@@ -27,7 +27,8 @@
             step="1"
             max="30"
             type="range"
-        /></label>
+          />
+        </div>
         <nav>
           <ul class="flex justify-center items-center space-x-5">
             <li class="underline cursor-pointer">Outline</li>
@@ -72,79 +73,81 @@ export default {
 
 <style lang="postcss">
 input[type='range'] {
+  margin: 1.5px 0;
+  background-color: transparent;
   -webkit-appearance: none;
-  margin: 18px 0;
 }
 input[type='range']:focus {
   outline: none;
 }
 input[type='range']::-webkit-slider-runnable-track {
+  background: #fff;
+  border: 1px solid #010101;
   width: 100%;
-  height: 1px;
-  padding: 3px;
+  height: 8px;
   cursor: pointer;
-  background: transparent;
-  border: 1px solid black;
 }
 input[type='range']::-webkit-slider-thumb {
-  border: 1px solid #000;
-  height: 10px;
+  margin-top: -2.5px;
   width: 10px;
+  height: 10px;
   background: #fff;
+  border: 1px solid #000;
   cursor: pointer;
   -webkit-appearance: none;
-  margin-top: -5px;
 }
 input[type='range']:focus::-webkit-slider-runnable-track {
   background: #fff;
 }
 input[type='range']::-moz-range-track {
-  width: 100%;
-  height: 8.4px;
-  cursor: pointer;
   background: #fff;
-  border-radius: 1.3px;
-  border: 0.2px solid #010101;
+  border: 1px solid #010101;
+  width: 100%;
+  height: 8px;
+  cursor: pointer;
 }
 input[type='range']::-moz-range-thumb {
-  border: 1px solid #000;
-  height: 36px;
-  width: 16px;
-  border-radius: 3px;
+  border-radius: 0;
+  width: 10px;
+  height: 10px;
   background: #fff;
+  border: 1px solid #000;
   cursor: pointer;
 }
 input[type='range']::-ms-track {
-  width: 100%;
-  height: 8.4px;
-  cursor: pointer;
   background: transparent;
   border-color: transparent;
-  border-width: 16px 0;
+  border-width: 1.5px 0;
   color: transparent;
+  width: 100%;
+  height: 8px;
+  cursor: pointer;
 }
 input[type='range']::-ms-fill-lower {
-  background: #fff;
-  border: 0.2px solid #010101;
-  border-radius: 2.6px;
+  background: #fafafa;
+  border: 1px solid #010101;
 }
 input[type='range']::-ms-fill-upper {
   background: #fff;
-  border: 0.2px solid #010101;
-  border-radius: 2.6px;
+  border: 1px solid #010101;
 }
 input[type='range']::-ms-thumb {
-  border: 1px solid #000;
-  height: 36px;
-  width: 16px;
-  border-radius: 3px;
+  width: 10px;
+  height: 10px;
   background: #fff;
+  border: 1px solid #000;
   cursor: pointer;
+  margin-top: 0;
 }
 input[type='range']:focus::-ms-fill-lower {
   background: #fff;
 }
 input[type='range']:focus::-ms-fill-upper {
   background: #fff;
+}
+@supports (-ms-ime-align: auto) {
+  input[type='range'] {
+    margin: 0;
+  }
 }
 </style>
