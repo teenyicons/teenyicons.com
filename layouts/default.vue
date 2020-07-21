@@ -4,7 +4,7 @@
       <nav>
         <ul class="flex items-center justify-center space-x-3">
           <li class="flex space-x-1">
-            <a class="underline" href="https://github.com/smhmd/teenycons"
+            <a class="underline" href="https://github.com/teenyicons/teenyicons.com"
               >Star on Github
             </a>
             <svg
