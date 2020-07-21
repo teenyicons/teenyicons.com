@@ -20,7 +20,7 @@
           <li class="flex space-x-1">
             <a
               class="underline"
-              href="https://www.figma.com/community/file/863456942245162897/Teenycons"
+              href="https://www.figma.com/community/file/866420896007969754"
               >Duplicate on Figma
             </a>
             <svg
@@ -39,7 +39,7 @@
       </nav>
       <div>
         <h1 class="font-bold text-5xl">
-          Teenycons
+          Teenyicons
         </h1>
         <p class="text-sm">Tiny minimal 1px icons</p>
       </div>
