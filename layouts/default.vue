@@ -57,7 +57,7 @@
           <li class="m-2">
             <a
               class="py-3 hover:underline"
-              href="https:/twitter.com/rebellenoire"
+              href="https://twitter.com/rebellenoire"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -78,7 +78,7 @@
           <li class="m-2">
             <a
               class="py-3 hover:underline"
-              href="https:/twitter.com/_smhmd"
+              href="https://twitter.com/_smhmd"
               target="_blank"
               rel="noopener noreferrer"
             >
