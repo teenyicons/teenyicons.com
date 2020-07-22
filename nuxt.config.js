@@ -27,7 +27,7 @@ export default {
   ],
   webfontloader: {
     google: {
-      families: ['Inter:400'],
+      families: ['Fira Code:400'],
     },
   },
   build: {},

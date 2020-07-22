@@ -1,11 +1,23 @@
-/*
-** TailwindCSS Configuration File
-**
-** Docs: https://tailwindcss.com/docs/configuration
-** Default: https://github.com/tailwindcss/tailwindcss/blob/master/stubs/defaultConfig.stub.js
-*/
 module.exports = {
-  theme: {},
+  theme: {
+    extend: {
+      boxShadow: {
+        mermaid: '0px 2px 0px #12F3D8',
+      },
+      colors: {
+        mermaid: '#12F3D8',
+        theme: {
+          primary: 'var(--primary)',
+          secondary: 'var(--secondary)',
+          ternary: 'var(--ternary)',
+          disabled: 'var(--disabled)',
+        },
+      },
+      transitionProperty: {
+        'transform-shadow': 'transform, box-shadow',
+      },
+    },
+  },
   variants: {},
   plugins: [],
   purge: {
