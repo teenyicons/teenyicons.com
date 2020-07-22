@@ -1,86 +1,119 @@
 <template>
-  <div class="space-y-5">
-    <div class="sticky z-10 bg-white pt-2" style="top: 0;">
-      <div
-        class="bg-white px-3 p-2 w-full inline-flex items-center justify-between border border-black space-x-3"
-      >
-        <icon-search />
+  <main class="w-full max-w-screen-md mx-auto">
+    <section
+      class="sticky top-0 z-10 flex flex-col justify-center pt-3 -mt-3 space-y-2 bg-theme-primary"
+    >
+      <div class="relative">
         <input
           v-model="searchTerm"
-          aria-label="Search icons"
-          class="w-full placeholder-black placeholder-opacity-50 focus:outline-none"
           type="search"
-          :placeholder="`Search ${$icons.length} icons...`"
-          spellcheck="false"
+          :placeholder="`Search icons...`"
+          class="w-full py-6 pl-16 border rounded appearance-none bg-theme-primary border-theme-secondary focus:outline-none focus:border-mermaid"
         />
+        <div
+          class="absolute inset-y-0 left-0 flex items-center justify-center pl-6 pointer-events-none text-mermaid"
+          style="margin-left: -2px; margin-top: 2px;"
+        >
+          <svg
+            class="w-4 h-4 stroke-current"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 15 15"
+          >
+            <path d="M14.5 14.5l-4-4m-4 2a6 6 0 110-12 6 6 0 010 12z" />
+          </svg>
+        </div>
+        <div
+          class="absolute inset-y-0 left-0 flex items-center justify-center pl-6 pointer-events-none"
+        >
+          <svg
+            class="w-4 h-4 stroke-current"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 15 15"
+          >
+            <path d="M14.5 14.5l-4-4m-4 2a6 6 0 110-12 6 6 0 010 12z" />
+          </svg>
+        </div>
       </div>
       <div
-        class="text-xs px-4 py-2 flex justify-between items-center border-b border-r border-l border-black"
+        class="flex items-center justify-between px-5 py-4 rounded bg-theme-secondary text-theme-primary"
       >
-        <div class="flex space-x-2">
-          <label for="range">Size: </label>
+        <div class="flex items-center justify-center space-x-3">
+          <label for="size">Size</label>
           <input
-            v-model.number="IconsSize"
-            class="appearance-none"
-            name="range"
+            v-model.number="size"
             min="15"
             step="1"
             max="30"
             type="range"
+            name="size"
           />
         </div>
-        <nav>
-          <ul class="flex justify-center items-center space-x-5">
-            <li class="cursor-pointer">
-              <button
-                class="focus:outline-none"
-                :class="variant === 'outline' ? 'underline' : ''"
-                @click="variant = 'outline'"
-              >
-                Outline
-              </button>
-            </li>
-            <li class="cursor-pointer">
-              <button
-                class="focus:outline-none"
-                :class="variant === 'filled' ? 'underline' : ''"
-                @click="variant = 'filled'"
-              >
-                Filled
-              </button>
-            </li>
-          </ul>
-        </nav>
+        <ul class="flex space-x-3">
+          <li>
+            <button
+              :class="
+                variant === 'outline'
+                  ? 'text-theme-ternary'
+                  : 'text-theme-disabled'
+              "
+              @click="variant = 'outline'"
+            >
+              Outline
+            </button>
+          </li>
+          <li>
+            <button
+              :class="
+                variant === 'filled'
+                  ? 'text-theme-ternary'
+                  : 'text-theme-disabled'
+              "
+              @click="variant = 'filled'"
+            >
+              Filled
+            </button>
+          </li>
+        </ul>
       </div>
-    </div>
-
-    <div
-      v-if="variant === 'outline'"
-      class="grid gap-1"
+    </section>
+    <section
+      class="grid gap-1 pt-5"
       style="grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));"
     >
-      <div v-for="(icon, index) in searchIcons" :key="index">
-        <app-icon :icon="icon" :size="IconsSize"></app-icon>
-      </div>
-    </div>
-    <div v-if="variant === 'filled'" class="text-center">Coming soon.</div>
-  </div>
+      <template v-if="variant === 'outline'">
+        <div v-for="(icon, index) in outlineIconsFiltered" :key="index">
+          <app-icon :icon="icon" :size="size" :variant="variant"></app-icon>
+        </div>
+      </template>
+      <template v-else-if="variant === 'filled'">
+        <div v-for="(icon, index) in filledIconsFiltered" :key="index">
+          <app-icon :icon="icon" :size="size" :variant="variant"></app-icon>
+        </div>
+      </template>
+    </section>
+  </main>
 </template>
 
 <script>
-import IconSearch from '@/assets/icons/search.svg';
-import AppIcon from '@/components/AppIcon';
-
 export default {
-  components: { IconSearch, AppIcon },
   data() {
-    return { searchTerm: '', IconsSize: 15, variant: 'outline' };
+    return { searchTerm: '', size: 15, variant: 'outline' };
   },
   computed: {
-    searchIcons() {
-      return this.$icons.filter((el) => {
+    outlineIconsFiltered() {
+      return this.$outlineIcons.filter((el) => {
         return el
-          .replace('icon-', '')
+          .replace('outline-', '')
+          .toLowerCase()
+          .includes(this.searchTerm.toLowerCase());
+      });
+    },
+    filledIconsFiltered() {
+      return this.$filledIcons.filter((el) => {
+        return el
+          .replace('filled-', '')
           .toLowerCase()
           .includes(this.searchTerm.toLowerCase());
       });
@@ -91,81 +124,72 @@ export default {
 
 <style lang="postcss">
 input[type='range'] {
-  margin: 1.5px 0;
-  background-color: transparent;
+  background: transparent;
   -webkit-appearance: none;
+  margin: 10px 0;
+  width: 100%;
 }
 input[type='range']:focus {
   outline: none;
 }
 input[type='range']::-webkit-slider-runnable-track {
-  background: #fff;
-  border: 1px solid #010101;
   width: 100%;
-  height: 8px;
+  height: 1px;
   cursor: pointer;
+  background: var(--primary);
 }
 input[type='range']::-webkit-slider-thumb {
-  margin-top: -2.5px;
-  width: 10px;
-  height: 10px;
-  background: #fff;
-  border: 1px solid #000;
+  height: 18px;
+  width: 18px;
+  border-radius: 9px;
+  background: #01e2c7;
   cursor: pointer;
   -webkit-appearance: none;
+  margin-top: -8.5px;
 }
 input[type='range']:focus::-webkit-slider-runnable-track {
-  background: #fff;
+  background: var(--primary);
 }
 input[type='range']::-moz-range-track {
-  background: #fff;
-  border: 1px solid #010101;
   width: 100%;
-  height: 8px;
+  height: 1px;
   cursor: pointer;
+  background: var(--primary);
+  border-radius: 0;
 }
 input[type='range']::-moz-range-thumb {
-  border-radius: 0;
-  width: 10px;
-  height: 10px;
-  background: #fff;
-  border: 1px solid #000;
+  height: 18px;
+  width: 18px;
+  border-radius: 9px;
+  background: #01e2c7;
   cursor: pointer;
 }
 input[type='range']::-ms-track {
+  width: 100%;
+  height: 1px;
+  cursor: pointer;
   background: transparent;
   border-color: transparent;
-  border-width: 1.5px 0;
   color: transparent;
-  width: 100%;
-  height: 8px;
-  cursor: pointer;
 }
 input[type='range']::-ms-fill-lower {
-  background: #fafafa;
-  border: 1px solid #010101;
+  background: var(--primary);
 }
 input[type='range']::-ms-fill-upper {
-  background: #fff;
-  border: 1px solid #010101;
+  background: var(--primary);
 }
 input[type='range']::-ms-thumb {
-  width: 10px;
-  height: 10px;
-  background: #fff;
-  border: 1px solid #000;
+  margin-top: 1px;
+  height: 18px;
+  width: 18px;
+  border-radius: 9px;
+  background: #01e2c7;
   cursor: pointer;
-  margin-top: 0;
 }
 input[type='range']:focus::-ms-fill-lower {
-  background: #fff;
+  background: var(--primary);
 }
 input[type='range']:focus::-ms-fill-upper {
-  background: #fff;
-}
-@supports (-ms-ime-align: auto) {
-  input[type='range'] {
-    margin: 0;
-  }
+  background: var(--primary);
 }
 </style>

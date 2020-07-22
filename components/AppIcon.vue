@@ -1,18 +1,19 @@
 <template>
   <div
     :title="icon"
-    class="relative cursor-pointer py-8 flex flex-col justify-center items-center space-y-2 hover:border-black border-transparent border"
+    class="relative flex flex-col items-center justify-center py-8 space-y-2 border border-transparent rounded cursor-pointer hover:border-theme-secondary hover:shadow-mermaid"
+    :class="copied ? 'border-theme-secondary shadow-mermaid' : ''"
     @click="copy"
     @keydown.enter="copy"
     @keydown.space.prevent="copy"
   >
     <component :is="icon" ref="icon" :width="size" :height="size" />
-    <span class="w-full text-center truncat text-xs">{{
-      icon.replace('icon-', '')
+    <span class="w-full px-1 text-xs text-center truncat">{{
+      icon.replace(variant + '-', '')
     }}</span>
     <span
       v-show="copied"
-      class="absolute inset-x-0 bottom-0 mx-auto w-full text-center text-xs bg-black text-white"
+      class="absolute inset-x-0 bottom-0 w-full mx-auto text-xs text-center text-black rounded-b bg-mermaid"
       >Copied!</span
     >
   </div>
@@ -23,7 +24,8 @@ import copyToClipboard from '@/helpers/copyToClipboard';
 export default {
   props: {
     icon: { type: String, required: true },
-    size: { type: Number, required: true },
+    variant: { type: String, default: 'outline' },
+    size: { type: Number, default: 15 },
   },
   data() {
     return { copied: false };

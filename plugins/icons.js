@@ -1,19 +1,40 @@
 import Vue from 'vue';
 
-const ComponentContext = require.context(
-  '@/assets/icons/',
+const outlineIcons = [];
+const filledIcons = [];
+
+const outlineIconsContextImporter = require.context(
+  '@/assets/icons/outline',
   true,
   /\.svg$/i,
   'lazy',
 );
-const icons = [];
+const filledIconsContextImporter = require.context(
+  '@/assets/icons/filled',
+  true,
+  /\.svg$/i,
+  'lazy',
+);
 
-ComponentContext.keys().forEach((componentFilePath) => {
-  const componentName = `icon-${
+outlineIconsContextImporter.keys().forEach((componentFilePath) => {
+  const componentName = `outline-${
     componentFilePath.split('/').pop().split('.')[0]
   }`;
-  icons.push(componentName);
-  Vue.component(componentName, () => ComponentContext(componentFilePath));
+  outlineIcons.push(componentName);
+  Vue.component(componentName, () =>
+    outlineIconsContextImporter(componentFilePath),
+  );
 });
 
-Vue.prototype.$icons = icons;
+filledIconsContextImporter.keys().forEach((componentFilePath) => {
+  const componentName = `filled-${
+    componentFilePath.split('/').pop().split('.')[0]
+  }`;
+  filledIcons.push(componentName);
+  Vue.component(componentName, () =>
+    filledIconsContextImporter(componentFilePath),
+  );
+});
+
+Vue.prototype.$outlineIcons = outlineIcons;
+Vue.prototype.$filledIcons = filledIcons;
