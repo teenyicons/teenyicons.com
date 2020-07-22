@@ -4,9 +4,11 @@
     class="flex flex-col h-full min-h-screen px-4 space-y-12 bg-theme-primary text-theme-secondary"
   >
     <header
-      class="flex flex-col w-full max-w-screen-xl pt-5 mx-auto space-y-20"
+      class="flex flex-col w-full max-w-screen-xl pt-5 mx-auto space-y-10 sm:space-y-20"
     >
-      <nav class="flex items-center justify-between space-x-2 text-sm">
+      <nav
+        class="flex flex-col items-center justify-between space-y-2 text-sm sm:flex-row sm:space-y-0"
+      >
         <nuxt-link aria-label="home" to="/">
           <svg
             width="180"
@@ -51,8 +53,8 @@
             />
           </svg>
         </nuxt-link>
-        <ul class="flex items-center justify-between space-x-4">
-          <li>
+        <ul class="flex flex-wrap items-center justify-center">
+          <li class="m-2">
             <a
               class="py-3 hover:underline"
               href="https:/twitter.com/rebellenoire"
@@ -73,7 +75,7 @@
               >Icons by rebellenoire</a
             >
           </li>
-          <li>
+          <li class="m-2">
             <a
               class="py-3 hover:underline"
               href="https:/twitter.com/_smhmd"
@@ -139,8 +141,8 @@
           />
         </svg>
         <nav>
-          <ul class="flex items-center justify-center space-x-2">
-            <li>
+          <ul class="flex flex-wrap items-center justify-center">
+            <li class="m-1">
               <a
                 class="inline-block px-5 py-4 text-center duration-200 ease-out transform rounded transition-transform-shadow bg-theme-secondary text-theme-primary hover:shadow-mermaid hover:-translate-y-2px"
                 href="https://github.com/teenyicons/teenyicons.com"
@@ -157,7 +159,7 @@
                 >Star on GitHub</a
               >
             </li>
-            <li>
+            <li class="m-1">
               <a
                 class="inline-block px-5 py-4 text-center duration-200 ease-out transform rounded transition-transform-shadow bg-theme-secondary text-theme-primary hover:shadow-mermaid hover:-translate-y-2px"
                 href="https://www.figma.com/community/file/866420896007969754"

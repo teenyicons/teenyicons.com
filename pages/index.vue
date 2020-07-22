@@ -38,13 +38,13 @@
         </div>
       </div>
       <div
-        class="flex items-center justify-between px-5 py-4 rounded bg-theme-secondary text-theme-primary"
+        class="flex flex-wrap items-center justify-between px-5 py-4 rounded bg-theme-secondary text-theme-primary"
       >
-        <div class="flex items-center justify-center space-x-3">
+        <div class="flex items-center justify-center pr-2 space-x-3">
           <label for="size">Size</label>
           <input
-            aria-label="Icons size"
             v-model.number="size"
+            aria-label="Icons size"
             min="15"
             step="1"
             max="30"
@@ -52,7 +52,7 @@
             name="size"
           />
         </div>
-        <ul class="flex space-x-3">
+        <ul class="flex ml-auto space-x-3">
           <li>
             <button
               :class="
