@@ -100,6 +100,7 @@
 
 <script>
 export default {
+  name: 'Index',
   data() {
     return { searchTerm: '', size: 15, variant: 'outline' };
   },

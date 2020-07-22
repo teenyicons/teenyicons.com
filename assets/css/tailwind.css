@@ -26,3 +26,8 @@
   --ternary: #000;
   --disabled: rgba(0, 0, 0, 0.5);
 }
+
+/* a hack: make icons white in dark theme */
+.theme-dark .icon-card svg {
+  filter: invert(1);
+}

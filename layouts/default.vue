@@ -7,7 +7,7 @@
       class="flex flex-col w-full max-w-screen-xl pt-5 mx-auto space-y-10 sm:space-y-20"
     >
       <nav
-        class="flex flex-col items-center justify-between space-y-2 text-sm sm:flex-row sm:space-y-0"
+        class="flex flex-col items-center justify-between space-y-2 text-sm md:flex-row md:space-y-0"
       >
         <nuxt-link aria-label="home" to="/">
           <svg
@@ -53,7 +53,7 @@
             />
           </svg>
         </nuxt-link>
-        <ul class="flex flex-wrap items-center justify-center">
+        <ul class="flex flex-wrap items-center justify-center sm:flex-no-wrap">
           <li class="m-2">
             <a
               class="py-3 hover:underline"
@@ -96,7 +96,7 @@
               >Viewer by _smhmd</a
             >
           </li>
-          <!-- <li>
+          <li>
             <button
               class="flex items-center justify-center px-4 focus:outline-none"
               @click="toggleTheme"
@@ -124,7 +124,7 @@
                 />
               </svg>
             </button>
-          </li> -->
+          </li>
         </ul>
       </nav>
       <section class="flex flex-col items-center justify-center space-y-8">
@@ -205,17 +205,17 @@
 
 <script>
 export default {
+  name: 'Default',
   data() {
     return {
       theme: 'theme-light',
     };
   },
-  // methods: {
-  //   toggleTheme(value) {
-  //     this.theme = this.theme === 'theme-light' ? 'theme-dark' : 'theme-light';
-  //     localStorage.setItem('theme', this.theme);
-  //   },
-  // },
+  methods: {
+    toggleTheme(value) {
+      this.theme = this.theme === 'theme-light' ? 'theme-dark' : 'theme-light';
+    },
+  },
 };
 </script>
 

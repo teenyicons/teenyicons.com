@@ -1,7 +1,7 @@
 <template>
   <div
     :title="icon"
-    class="relative flex flex-col items-center justify-center py-8 space-y-2 border border-transparent rounded cursor-pointer hover:border-theme-secondary hover:shadow-mermaid"
+    class="relative flex flex-col items-center justify-center py-8 space-y-2 border border-transparent rounded cursor-pointer icon-card hover:border-theme-secondary hover:shadow-mermaid"
     :class="copied ? 'border-theme-secondary shadow-mermaid' : ''"
     @click="copy"
     @keydown.enter="copy"
@@ -22,6 +22,7 @@
 <script>
 import copyToClipboard from '@/helpers/copyToClipboard';
 export default {
+  name: 'Icon',
   props: {
     icon: { type: String, required: true },
     variant: { type: String, default: 'outline' },
