@@ -40,7 +40,7 @@ export default {
       },
       {
         property: 'og:image',
-        content: '/og.png',
+        content: 'https://teenyicons.com/og.png',
       },
       {
         property: 'og:image:width',
@@ -76,7 +76,7 @@ export default {
       },
       {
         property: 'twitter:image',
-        content: '/og.png',
+        content: 'https://teenyicons.com/og.png',
       },
       {
         name: 'twitter:image:alt',
