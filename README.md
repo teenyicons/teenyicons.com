@@ -1,4 +1,4 @@
-# teenycons
+# teenyicons.com
 
 ## Build Setup
 
