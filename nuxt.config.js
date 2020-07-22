@@ -12,7 +12,27 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: 'A minimal icon pack.',
+        content: process.env.npm_package_description || '',
+      },
+      {
+        property: 'og:image',
+        content: '/og.png',
+      },
+      {
+        property: 'og:url',
+        content: 'https://teenyicons.com',
+      },
+      {
+        name: 'twitter:card',
+        content: 'summary_large_image',
+      },
+      {
+        property: 'og:site_name',
+        content: 'Teenyicons',
+      },
+      {
+        name: 'twitter:image:alt',
+        content: 'Minimalist 1px icons',
       },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
