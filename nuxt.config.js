@@ -21,8 +21,8 @@ export default {
           'An elegant icon set by Anja van Staden with more than a thousand icons.',
       },
       {
-        property: '',
-        content: '',
+        name: 'google-site-verification',
+        content: 'SV1zPsHeEotbeQMFwnWuQcjUJMXP8p3mAw9Xz8YRV4Q',
       },
       {
         property: 'og:type',
