@@ -6,6 +6,7 @@
       <div class="relative">
         <input
           v-model="searchTerm"
+          aria-label="Search Icons"
           type="search"
           :placeholder="`Search icons...`"
           class="w-full py-6 pl-16 border rounded appearance-none bg-theme-primary border-theme-secondary focus:outline-none focus:border-mermaid"
@@ -42,6 +43,7 @@
         <div class="flex items-center justify-center space-x-3">
           <label for="size">Size</label>
           <input
+            aria-label="Icons size"
             v-model.number="size"
             min="15"
             step="1"

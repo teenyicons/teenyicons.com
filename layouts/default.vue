@@ -7,7 +7,7 @@
       class="flex flex-col w-full max-w-screen-xl pt-5 mx-auto space-y-20"
     >
       <nav class="flex items-center justify-between space-x-2 text-sm">
-        <nuxt-link to="/">
+        <nuxt-link aria-label="home" to="/">
           <svg
             width="180"
             class="fill-current text-theme-secondary"
