@@ -16,7 +16,9 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: process.env.npm_package_description || 'An elegant icon set by Anja van Staden with more than a thousand icons.',
+        content:
+          process.env.npm_package_description ||
+          'An elegant icon set by Anja van Staden with more than a thousand icons.',
       },
       {
         property: '',
@@ -36,7 +38,8 @@ export default {
       },
       {
         property: 'og:description',
-        content: 'An elegant icon set by Anja van Staden with more than a thousand icons.',
+        content:
+          'An elegant icon set by Anja van Staden with more than a thousand icons.',
       },
       {
         property: 'og:image',
@@ -68,7 +71,8 @@ export default {
       },
       {
         property: 'twitter:description',
-        content: 'An elegant icon set by Anja van Staden with more than a thousand icons.',
+        content:
+          'An elegant icon set by Anja van Staden with more than a thousand icons.',
       },
       {
         name: 'twitter:url',

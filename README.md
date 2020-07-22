@@ -1,20 +1,18 @@
-# teenyicons.com
+<h2 align="center">Teenyicons</h2>
 
-## Build Setup
+[![splash image of teenyicons](hero.png)](https://teenyicons.com)
 
-```bash
+Tiny minimal 1px icons — An elegant MIT-licensed icon set by [**Anja van Staden**](https://twitter.com/rebellenoire) with more than a thousand icons. Viewer by [**Simohamed**](https://twitter.com/_smhmd).
+
+### Build Setup
+
+```fish
 # install dependencies
-$ yarn install
+$ yarn
 
 # serve with hot reload at localhost:3000
 $ yarn dev
 
-# build for production and launch server
-$ yarn build
-$ yarn start
-
 # generate static project
-$ yarn generate
+$ yarn build && yarn export
 ```
-
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
