@@ -211,15 +211,9 @@ export default {
       theme: 'theme-light',
     };
   },
-  beforeMount() {
-    this.$nextTick(() => {
-      this.theme = localStorage.getItem('theme-color') || 'theme-light';
-    });
-  },
   methods: {
-    toggleTheme(value) {
+    toggleTheme() {
       this.theme = this.theme === 'theme-light' ? 'theme-dark' : 'theme-light';
-      localStorage.setItem('theme-color', this.theme);
     },
   },
 };
