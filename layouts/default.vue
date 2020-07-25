@@ -145,7 +145,7 @@
             <li class="m-1">
               <a
                 class="inline-block px-5 py-4 text-center duration-200 ease-out transform rounded transition-transform-shadow bg-theme-secondary text-theme-primary hover:shadow-mermaid hover:-translate-y-2px"
-                href="https://github.com/teenyicons/teenyicons.com"
+                href="https://github.com/teenyicons/teenyicons"
                 target="_blank"
                 rel="noopener noreferrer"
                 ><svg
