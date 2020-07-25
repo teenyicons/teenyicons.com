@@ -1,3 +1,5 @@
+<h1 align="center"> 🚨 We will publish an NPM package very soon (today-ish) 🚨 </h1>
+
 <h2 align="center">Teenyicons</h2>
 
 [![splash image of teenyicons](hero.png)](https://teenyicons.com)
