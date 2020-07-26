@@ -6,6 +6,23 @@ Tiny minimal 1px icons — An elegant MIT-licensed icon set by [**Anja van Stade
 
 ## NPM package 👉 https://github.com/teenyicons/teenyicons
 
+## Features/TODO
+
+- [x] Search
+- [x] Dark mode
+- [x] Copy icon source
+- Dashboard
+  - [x] Resizing SVGs
+  - [ ] Buttons to download zip of all SVGs
+  - [ ] Toggle between copy and download
+  - [ ] Colors options
+- [ ] Fuzzy Search
+- [ ] Search using tags
+- [ ] Search as a query param. E.g., "teenyicons.com/?search=vue"
+- [ ] Catagorize icons
+- [ ] Icon request button
+- [ ] Use Vue 3
+
 ### Build Setup
 
 ```fish
