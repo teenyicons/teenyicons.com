@@ -14,7 +14,8 @@
     "lint": "yarn lint:js && yarn lint:style"
   },
   "dependencies": {
-    "nuxt": "^2.13.0"
+    "nuxt": "^2.13.0",
+    "teenyicons": "^0.2.0"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^3.0.0",
