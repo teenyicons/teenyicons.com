@@ -68,13 +68,13 @@
           <li>
             <button
               :class="
-                variant === 'filled'
+                variant === 'solid'
                   ? 'text-theme-ternary'
                   : 'text-theme-disabled'
               "
-              @click="variant = 'filled'"
+              @click="variant = 'solid'"
             >
-              Filled
+              Solid
             </button>
           </li>
         </ul>
@@ -89,8 +89,8 @@
           <app-icon :icon="icon" :size="size" :variant="variant"></app-icon>
         </div>
       </template>
-      <template v-else-if="variant === 'filled'">
-        <div v-for="(icon, index) in filledIconsFiltered" :key="index">
+      <template v-else-if="variant === 'solid'">
+        <div v-for="(icon, index) in solidIconsFiltered" :key="index">
           <app-icon :icon="icon" :size="size" :variant="variant"></app-icon>
         </div>
       </template>
@@ -113,10 +113,10 @@ export default {
           .includes(this.searchTerm.toLowerCase());
       });
     },
-    filledIconsFiltered() {
-      return this.$filledIcons.filter((el) => {
+    solidIconsFiltered() {
+      return this.$solidIcons.filter((el) => {
         return el
-          .replace('filled-', '')
+          .replace('solid-', '')
           .toLowerCase()
           .includes(this.searchTerm.toLowerCase());
       });

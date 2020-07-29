@@ -1,16 +1,16 @@
 import Vue from 'vue';
 
 const outlineIcons = [];
-const filledIcons = [];
+const solidIcons = [];
 
 const outlineIconsContextImporter = require.context(
-  '@/assets/icons/outline',
+  '@/node_modules/teenyicons/outline',
   true,
   /\.svg$/i,
   'lazy',
 );
-const filledIconsContextImporter = require.context(
-  '@/assets/icons/filled',
+const solidIconsContextImporter = require.context(
+  '@/node_modules/teenyicons/solid',
   true,
   /\.svg$/i,
   'lazy',
@@ -26,15 +26,15 @@ outlineIconsContextImporter.keys().forEach((componentFilePath) => {
   );
 });
 
-filledIconsContextImporter.keys().forEach((componentFilePath) => {
-  const componentName = `filled-${
+solidIconsContextImporter.keys().forEach((componentFilePath) => {
+  const componentName = `solid-${
     componentFilePath.split('/').pop().split('.')[0]
   }`;
-  filledIcons.push(componentName);
+  solidIcons.push(componentName);
   Vue.component(componentName, () =>
-    filledIconsContextImporter(componentFilePath),
+    solidIconsContextImporter(componentFilePath),
   );
 });
 
 Vue.prototype.$outlineIcons = outlineIcons;
-Vue.prototype.$filledIcons = filledIcons;
+Vue.prototype.$solidIcons = solidIcons;
