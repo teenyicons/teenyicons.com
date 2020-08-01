@@ -82,8 +82,8 @@
       </div>
     </section>
     <section
-      class="grid gap-1 pt-5"
       id="icons"
+      class="grid gap-1 pt-5"
       aria-live="polite"
       style="grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));"
     >
