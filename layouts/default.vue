@@ -99,6 +99,7 @@
           <li>
             <button
               class="flex items-center justify-center px-4 focus:outline-none"
+              aria-label="Toggle Theme"
               @click="toggleTheme"
             >
               <svg

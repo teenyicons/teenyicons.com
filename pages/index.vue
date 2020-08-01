@@ -7,6 +7,7 @@
         <input
           v-model="searchTerm"
           aria-label="Search Icons"
+          aria-controls="icons"
           type="search"
           :placeholder="`Search icons...`"
           class="w-full py-6 pl-16 border rounded appearance-none bg-theme-primary border-theme-secondary focus:outline-none focus:border-mermaid"
@@ -82,6 +83,8 @@
     </section>
     <section
       class="grid gap-1 pt-5"
+      id="icons"
+      aria-live="polite"
       style="grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));"
     >
       <template v-if="variant === 'outline'">
